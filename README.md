@@ -22,7 +22,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [solution URL here](https://your-solution-url.com)
+- Solution URL: [solution URL here](https://www.frontendmentor.io/solutions/article-preview-with-htmlscssjavascript-HmP3B8aro)
 - Live Site URL: [live site URL here](https://angry-pike-8b6acc.netlify.app/)
 
 ## My process
