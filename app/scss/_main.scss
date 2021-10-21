@@ -1,0 +1,209 @@
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .card {
+    max-width: 25rem;
+    width: calc(100% - 1.5rem * 2);
+    margin: 5rem auto;
+    background-color: white;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    @include breakpoint-up {
+      max-width: 45.625rem;
+      height: 17.4375rem;
+      flex-direction: row;
+    }
+
+    &__image {
+      height: 12.5rem;
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+      overflow: hidden;
+
+      @include breakpoint-up {
+        height: 100%;
+        min-width: 17.8125rem;
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__text {
+      padding-top: 2.66rem;
+
+      @include breakpoint-up {
+        padding: 2rem 2.5rem;
+      }
+
+      h2 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: $very-dark-grayish-blue;
+        margin-bottom: 0.6875rem;
+        padding: 0 2.0625rem;
+
+        @include breakpoint-up {
+          padding: 0;
+          font-size: 20px;
+        }
+      }
+
+      p {
+        font-size: 0.8125rem;
+        color: $very-dark-grayish-blue;
+        font-weight: 500;
+        line-height: 165%;
+        padding: 0 2.0625rem;
+        margin-bottom: 1.1875rem;
+        width: 99%;
+        @include breakpoint-up {
+          padding: 0;
+        }
+      }
+
+      &-user {
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 0 2.0625rem;
+        height: 4.125rem;
+
+        @include breakpoint-up {
+          padding: 0;
+
+          .share::before {
+            content: '';
+            background-color: $very-dark-grayish-blue;
+            clip-path: polygon(50% 0, 100% 100%, 0 100%);
+            width: 1.4375rem;
+            height: 0.75rem;
+            position: absolute;
+            transform: rotate(180deg) translateX(50%);
+            top: 100%;
+            left: 50%;
+          }
+        }
+
+        .avatar {
+          width: 2.625rem;
+          height: 2.625rem;
+          overflow: hidden;
+          border-radius: 50%;
+          margin-right: 0.9375rem;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .info {
+          display: flex;
+          flex-direction: column;
+
+          .name {
+            color: $very-dark-grayish-blue;
+            font-weight: bold;
+            font-size: 0.8125rem;
+            margin-bottom: 0.1875rem;
+          }
+
+          .date {
+            font-size: 0.8125rem;
+            color: $desaturated-dark-blue;
+            font-weight: 500;
+          }
+        }
+
+        &.active {
+          .button {
+            background-color: $desaturated-dark-blue;
+
+            svg {
+              path {
+                fill: white;
+              }
+            }
+          }
+
+          .share {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+
+        .button {
+          margin-left: auto;
+          width: 2rem;
+          height: 2rem;
+          background-color: $grayish-blue;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          z-index: 1;
+          cursor: pointer;
+          transition: all 200ms ease-in-out;
+        }
+
+        .share {
+          position: absolute;
+          background-color: $very-dark-grayish-blue;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          display: flex;
+          align-items: center;
+          padding: 0 2.0625rem;
+          transition: all 200ms ease-in-out;
+          opacity: 0;
+          visibility: hidden;
+          border-bottom-left-radius: 0.5rem;
+          border-bottom-right-radius: 0.5rem;
+
+          @include breakpoint-up {
+            right: unset;
+            bottom: unset;
+            width: 15.625rem;
+            height: 3.4375rem;
+            border-radius: 0.625rem;
+            top: -100%;
+            left: 61%;
+          }
+
+          span {
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.375rem;
+            color: $desaturated-dark-blue;
+            margin-right: 1.375rem;
+          }
+
+          img {
+            cursor: pointer;
+          }
+
+          img:not(:last-child) {
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
